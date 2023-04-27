@@ -1,7 +1,7 @@
 
 SRC = megaphone.cpp
 
-OSRC=$(SRC:.c=.o)
+OSRC=$(SRC:.cpp=.o)
 
 NAME= megaphone
 INCLUDE = -I .
@@ -11,7 +11,7 @@ all: $(NAME)
 $(NAME): $(OSRC) 
 	@c++ -Wall -Wextra -Werror $(INCLUDE) $^ -o $@
 
-%.o : %.c
+%.o : %.cpp
 	@c++ -Wall -Wextra -Werror -c $<
 
 clean:
