@@ -1,8 +1,8 @@
-SRC = phonebook.cpp
+SRC = Account.cpp tests.cpp
 
-OSRC=$(SRC:.c=.o)
+OSRC=$(SRC:.cpp=.o)
 
-NAME= phonebook
+NAME= Account
 INCLUDE = -I .
 
 all: $(NAME)
@@ -10,7 +10,7 @@ all: $(NAME)
 $(NAME): $(OSRC) 
 	@c++ -Wall -Wextra -Werror $(INCLUDE) $^ -o $@
 
-%.o : %.c
+%.o : %.cpp
 	@c++ -Wall -Wextra -Werror -c $<
 
 clean:
