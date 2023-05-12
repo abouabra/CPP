@@ -137,6 +137,26 @@ const Fixed &Fixed::max(const Fixed &a, const Fixed &b)
 
 Fixed& Fixed::operator ++()
 {
-    this->setRawBits(this->getRawBits() + (1 << this->bits));
+    this->nb += 2;
     return *this;
+}
+
+Fixed& Fixed::operator --()
+{
+    this->nb -= 2;
+    return *this;
+}
+
+Fixed Fixed::operator++(int)
+{
+    Fixed copy(*this);
+    ++(*this);
+    return copy;
+}
+
+Fixed Fixed::operator--(int)
+{
+    Fixed copy(*this);
+    --(*this);
+    return copy;
 }

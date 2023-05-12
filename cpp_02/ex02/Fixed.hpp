@@ -14,6 +14,9 @@ public:
     Fixed(Fixed const &fixed);
     Fixed& operator = (Fixed const &fixed);
     Fixed& operator ++();
+    Fixed& operator --();
+    Fixed operator ++(int);
+    Fixed operator --(int);
     ~Fixed();
     int getRawBits( void ) const;
     void setRawBits( int const raw );
