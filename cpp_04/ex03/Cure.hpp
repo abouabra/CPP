@@ -8,17 +8,16 @@ class Cure : public AMateria
 {
 protected:
     std::string type;
-    Cure();
 public:
-    Cure(std::string const & type);
-    Cure(Cure& Cure);
+    Cure();
+    Cure(const Cure& Cure);
 
-    Cure& operator = (Cure& Cure);
-    virtual ~Cure();
-    
-    std::string const & getType() const; //Returns the materia type
-    virtual Cure* clone() const;
-    virtual void use(ICharacter& target);
+    Cure& operator = (const Cure& Cure);
+    ~Cure();
+
+    AMateria	*clone( void ) const;
+	void		use( ICharacter &target );
+
 };
 
 #endif

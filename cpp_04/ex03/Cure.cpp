@@ -1,22 +1,19 @@
 #include "Cure.hpp"
 #include "AMateria.hpp"
+#include "ICharacter.hpp"
 #include <iostream>
 
 Cure::Cure()
 {
-    this->type = "cure";
+    this->AMateria::type = "cure";
 }
 
-Cure::Cure(std::string const & type)
+Cure::Cure(const Cure& Cure)
 {
-    this->type = type;
-}
-Cure::Cure(Cure& Cure)
-{
-    this->type = Cure.getType();
+    this->AMateria::type = Cure.getType();
 }
 
-Cure& Cure::operator = (Cure& Cure)
+Cure& Cure::operator = (const Cure& Cure)
 {
     if(this != &Cure)
     {
@@ -30,13 +27,9 @@ Cure::~Cure()
 
 }
     
-const std::string&  Cure::getType() const{
-    return this->type;
-}
-
-Cure* Cure::clone() const
+AMateria* Cure::clone() const
 {
-    return new Cure("cure");
+    return new Cure(*this);
 }
 
 void Cure::use(ICharacter& target)

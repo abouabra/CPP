@@ -8,10 +8,10 @@ class ICharacter;
 class AMateria{
 protected:
     std::string type;
-    AMateria();
 public:
+    AMateria();
     AMateria(std::string const & type);
-    AMateria(AMateria& AMateria);
+    AMateria(const AMateria& AMateria);
 
     AMateria& operator = (AMateria& AMateria);
     virtual ~AMateria();

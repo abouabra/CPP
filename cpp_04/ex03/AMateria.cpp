@@ -9,7 +9,7 @@ AMateria::AMateria(std::string const & type)
 {
     this->type = type;
 }
-AMateria::AMateria(AMateria& AMateria)
+AMateria::AMateria(const AMateria& AMateria)
 {
     this->type = AMateria.getType();
 }
@@ -17,9 +17,7 @@ AMateria::AMateria(AMateria& AMateria)
 AMateria& AMateria::operator = (AMateria& AMateria)
 {
     if(this != &AMateria)
-    {
         this->type = AMateria.getType();
-    }
     return *this;
 }
 
@@ -32,6 +30,7 @@ const std::string&  AMateria::getType() const{
     return this->type;
 }
 
-// AMateria* AMateria::clone() const
-
-// virtual void use(ICharacter& target);
+void AMateria::use(ICharacter& target)
+{
+    (void) target;
+}

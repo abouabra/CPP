@@ -1,4 +1,4 @@
-SRC = main.cpp
+SRC = AMateria.cpp Cure.cpp MateriaSource.cpp Character.cpp Ice.cpp main.cpp
 
 OSRC=$(SRC:.cpp=.o)
 
