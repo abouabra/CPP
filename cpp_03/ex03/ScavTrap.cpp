@@ -1,6 +1,4 @@
 #include "ScavTrap.hpp"
-#include "ClapTrap.hpp"
-#include <string>
 
 ScavTrap::ScavTrap():ClapTrap("Default",100,50,20)
 {
@@ -17,10 +15,9 @@ ScavTrap::ScavTrap(std::string Name):ClapTrap(Name,100,50,20)
     std::cout << "ScavTrap "<< Name <<" constructor called!" << std::endl;
 }
 
-ScavTrap::ScavTrap(ScavTrap& Scavtrap)
+ScavTrap::ScavTrap(ScavTrap& ScavTrap):ClapTrap(ScavTrap.Name,ScavTrap.Hit_Points,ScavTrap.Energy_Points,ScavTrap.Attack_Damage)
 {
-    *this = Scavtrap;
-    std::cout << "ScavTrap Copy constructor called!" << std::endl;
+    std::cout << "ScavTrap " <<this->Name << " Copy constructor called!" << std::endl;
 }
 
 ScavTrap& ScavTrap:: operator = (ScavTrap& Scavtrap)
@@ -41,3 +38,19 @@ void ScavTrap::guardGate()
     std::cout << "ScavTrap "<< this->Name <<" is now in Gate keeper mode." << std::endl;
 }
 
+int ScavTrap::getHP()
+{
+    return 100;
+}
+int ScavTrap::getAD()
+{
+    return 20;
+}
+int ScavTrap::getEP()
+{
+    return 50;
+}
+std::string ScavTrap::getName()
+{
+    return this->Name;
+}

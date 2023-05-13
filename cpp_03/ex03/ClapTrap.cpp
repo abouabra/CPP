@@ -14,6 +14,16 @@ ClapTrap::~ClapTrap()
     std::cout << "ClapTrap "<< this->Name <<" destructor called!" << std::endl;
 }
 
+ClapTrap::ClapTrap(std::string Name)
+{
+    this->Name = Name;
+    this->Hit_Points = 10;
+    this->Energy_Points = 10;
+    this->Attack_Damage = 0;
+    std::cout << "ClapTrap "<< Name <<" constructor called!" << std::endl;
+
+}
+
 ClapTrap::ClapTrap(std::string Name,int Hit_Points, int Energy_Points, int Attack_Damage)
 {
     this->Name = Name;

@@ -12,9 +12,9 @@ int	main()
 	DiamondTrap b( "Alfonso" );
 	std::cout << std::endl;
 	d = b;
-	// std::cout << std::endl;
-	// d.attack("Me");
-	// std::cout << std::endl;
-	// a.whoAmI();
-	// std::cout << std::endl;
+	std::cout << std::endl;
+	d.attack("Me");
+	std::cout << std::endl;
+	a.whoAmI();
+	std::cout << std::endl;
 }

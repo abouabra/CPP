@@ -5,12 +5,7 @@
 #include <iostream>
 #include <string>
 
-class ScavTrap:public ClapTrap{
-private:
-    std::string Name;
-    int Hit_Points;
-    int Energy_Points;
-    int Attack_Damage;
+class ScavTrap:public virtual ClapTrap{
 public:
     ScavTrap();
     ~ScavTrap();
@@ -19,6 +14,11 @@ public:
     ScavTrap& operator = (ScavTrap& scavtrap);
 
     void guardGate();
+
+    int getHP();
+    int getEP();
+    int getAD();
+    std::string getName();
 };
 
 #endif

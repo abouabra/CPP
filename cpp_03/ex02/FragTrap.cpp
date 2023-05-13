@@ -1,4 +1,5 @@
 #include "FragTrap.hpp"
+#include "ClapTrap.hpp"
 
 FragTrap::FragTrap():ClapTrap("Default",100,100,30)
 {
@@ -15,10 +16,9 @@ FragTrap::FragTrap(std::string Name):ClapTrap(Name,100,100,30)
     std::cout << "FragTrap "<< Name <<" constructor called!" << std::endl;
 }
 
-FragTrap::FragTrap(FragTrap& FragTrap)
+FragTrap::FragTrap(FragTrap& FragTrap):ClapTrap(FragTrap.Name,FragTrap.Hit_Points,FragTrap.Energy_Points,FragTrap.Attack_Damage)
 {
-    *this = FragTrap;
-    std::cout << "FragTrap Copy constructor called!" << std::endl;
+    std::cout << "FragTrap "<< FragTrap.Name <<" Copy constructor called!" << std::endl;
 }
 
 FragTrap& FragTrap:: operator = (FragTrap& FragTrap)

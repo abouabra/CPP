@@ -3,15 +3,13 @@
 
 #include "ScavTrap.hpp"
 #include "FragTrap.hpp"
+#include "ClapTrap.hpp"
 #include <iostream>
 #include <string>
 
 class DiamondTrap:public ScavTrap, public FragTrap{
 private:
     std::string Name;
-    int Hit_Points;
-    int Energy_Points;
-    int Attack_Damage;
 public:
     DiamondTrap();
     ~DiamondTrap();
@@ -19,6 +17,8 @@ public:
     DiamondTrap(DiamondTrap& diamondtrap);
     DiamondTrap& operator = (DiamondTrap& diamondtrap);
 
+    void	attack( const std::string &target );
+	void	whoAmI( void );
 };
 
 #endif

@@ -4,12 +4,7 @@
 #include "ClapTrap.hpp"
 #include <iostream>
 
-class FragTrap:public ClapTrap{
-private:
-    std::string Name;
-    int Hit_Points;
-    int Energy_Points;
-    int Attack_Damage;
+class FragTrap:public virtual ClapTrap{
 public:
     FragTrap();
     ~FragTrap();
